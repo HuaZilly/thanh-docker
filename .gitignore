@@ -7,6 +7,12 @@
 !/.magento/**
 /.magento/local
 !/app
+!/docker/*
+!/docker-compose.yml
+!/docker/nginx/default.conf
+!/docker/php/Dockerfile
+!/docker/php/php.ini
+!.env
 !/app/*/
 !/app/code/**
 !/app/design/**
