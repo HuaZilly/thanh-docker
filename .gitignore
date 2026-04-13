@@ -12,7 +12,7 @@
 !/docker/nginx/default.conf
 !/docker/php/Dockerfile
 !/docker/php/php.ini
-!.env
+!/.env
 !/app/*/
 !/app/code/**
 !/app/design/**
