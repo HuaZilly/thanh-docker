@@ -1,0 +1,44 @@
+
+- Install SSL, gO to root folder
+brew install mkcert
+mkcert -install
+mkdir -p docker/nginx/certs
+cd docker/nginx/certs
+mkcert magento.local magento.vn.local
+
+- Install DB
+php bin/magento setup:install \
+--base-url=https://agrilink-m2.local \
+--db-host=db \
+--db-name=agrilink_m2 \
+--db-user=root \
+--db-password=root \
+--admin-firstname=admin \
+--admin-lastname=admin \
+--admin-email=abbbdmin@admin.com \
+--admin-user=thanh \
+--admin-password=thanh123 \
+--language=en_AU \
+--currency=AUD \
+--search-engine=opensearch \
+--opensearch-host=opensearch \
+--opensearch-port=9200 \
+--opensearch-index-prefix=agrilink \
+--opensearch-enable-auth=0 \
+--opensearch-timeout=15 \
+--timezone=Australia/Sydney \
+--use-rewrites=1
+
+- First time build the container
+docker compose up -d --build
+
+- After build to restart all services
+docker compose restart
+
+- Restart specific serviceL
+docker compose restart nginx
+
+- Access the container
+docker compose exec php bash
+
+- Access the container
