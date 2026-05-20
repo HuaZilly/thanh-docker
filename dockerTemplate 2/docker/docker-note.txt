@@ -60,3 +60,6 @@ docker compose exec php bash
             ]
         ]
     ],
+- Add the domain to the host
+sudo nano /etc/hosts
+add: 127.0.0.1 combipower-docker.local
