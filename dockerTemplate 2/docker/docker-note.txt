@@ -41,4 +41,22 @@ docker compose restart nginx
 - Access the container
 docker compose exec php bash
 
-- Access the container
+- Example the ENV.php to connect database:
+'db' => [
+        'table_prefix' => '',
+        'connection' => [
+            'default' => [
+                'host' => 'db',
+                'dbname' => 'combipower_m2',
+                'username' => 'combipower_m2',
+                'password' => 'combipower_m2',
+                'model' => 'mysql4',
+                'engine' => 'innodb',
+                'initStatements' => 'SET NAMES utf8;',
+                'active' => '1',
+                'driver_options' => [
+                    1014 => false
+                ]
+            ]
+        ]
+    ],
