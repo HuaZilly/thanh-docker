@@ -7,7 +7,7 @@ SHELL ["/bin/sh", "-lc"]
 RUN set -eux; \
   apt-get update; \
   apt-get install -y --no-install-recommends \
-    git unzip ftp ca-certificates \
+    git unzip ca-certificates \
     libzip-dev libicu-dev libxml2-dev libxslt1-dev \
     libpng-dev libjpeg62-turbo-dev libfreetype6-dev \
     libonig-dev libcurl4-openssl-dev default-mysql-client \
@@ -27,7 +27,7 @@ RUN set -eux; \
   docker-php-ext-configure gd --with-freetype --with-jpeg; \
   JOBS="$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"; \
   docker-php-ext-install -j"${JOBS}" \
-    bcmath intl pdo_mysql soap xsl zip sockets opcache gd
+    bcmath intl ftp pdo_mysql soap xsl zip sockets opcache gd
 
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
