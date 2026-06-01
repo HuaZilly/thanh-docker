@@ -7,7 +7,7 @@ SHELL ["/bin/sh", "-lc"]
 RUN set -eux; \
   apt-get update; \
   apt-get install -y --no-install-recommends \
-    git unzip ca-certificates \
+    git unzip ftp ca-certificates \
     libzip-dev libicu-dev libxml2-dev libxslt1-dev \
     libpng-dev libjpeg62-turbo-dev libfreetype6-dev \
     libonig-dev libcurl4-openssl-dev default-mysql-client \
